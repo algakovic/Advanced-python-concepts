@@ -4,7 +4,8 @@ import math
 class geometry_solver(object):
     @staticmethod
     def area_of_circle(radius):
-        return(math.pi * radius**2)
+        ans = math.pi * radius**2
+        return(ans)
 
     @staticmethod
     def area_of_rect(width, length):
@@ -50,7 +51,7 @@ def main():
             response = input("Length? ")
             l = float(response)
             ans = geometry_solver.area_of_rect(w, l)
-            print(f"Area of Recatngle with width {w} and length {l} is {ans}")
+            print(f"Area of Rectangle with width {w} and length {l} is {ans}")
         elif choice == "3":
             response = input("Width? ")
             w = float(response)
@@ -64,3 +65,10 @@ def main():
 if __name__ == "__main__":
     main()
 '''system module'''
+
+'''Test REPL Function in VSCODE terminal: Highlight code and press shift+enter'''
+import math
+x=math.pi
+x = x*10
+print(x)
+
