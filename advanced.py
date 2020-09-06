@@ -1,4 +1,4 @@
-'''Getting to grips with VS Code and Python'''
+# '''Getting to grips with VS Code and Python'''
 import math
 
 class geometry_solver(object):
@@ -33,11 +33,12 @@ def main():
         print("2) Area of a rectangle")
         print("3) Volume of a box")
         print("X) Exit")
+        print() # blank line
 
         # process user input
         choice = input("Your choice?")
         if choice == "X":
-            print(Goodbye!)
+            print("Goodbye!")
             running = False
         elif choice =="1":
             response = input("Radius? ")
@@ -52,6 +53,15 @@ def main():
             ans = geometry_solver.area_of_rect(w, l)
             print(f"Area of Recatngle with width {w} and length {l} is {ans}")
         elif choice == "3":
-            response == input("")
+            response == input("Width? ")
+            w = float(response)
+            response == input("Length? ")
+            l = float(response)
+            response == input("Depth? ")
+            d = float(response)
+            ans = geometry_solver.volume_of_box(w, l, d)
+            print(f"Volume of box with Width {w}, Length {l} and Depth {d} is {ans}")
 
+if __name__ == "__main__":
+    main()
 '''system module'''
