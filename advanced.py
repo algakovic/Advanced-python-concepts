@@ -26,14 +26,7 @@ def main():
     running = True
     while (running):
         # Print menu
-        print() # blank line
-        print("Welcome to the Geometry solver V2")
-        print("---------------------------------")
-        print("1) Area of a circle")
-        print("2) Area of a rectangle")
-        print("3) Volume of a box")
-        print("X) Exit")
-        print() # blank line
+        print_menu() # blank line
 
         # process user input
         choice = input("Your choice?")
@@ -61,6 +54,17 @@ def main():
             d = float(response)
             ans = geometry_solver.volume_of_box(w, l, d)
             print(f"Volume of box with Width {w}, Length {l} and Depth {d} is {ans}")
+
+def print_menu():
+    # Print menu
+    print() # blank line
+    print("Welcome to the Geometry solver V2")
+    print("---------------------------------")
+    print("1) Area of a circle")
+    print("2) Area of a rectangle")
+    print("3) Volume of a box")
+    print("X) Exit")
+    print() # blank line
 
 if __name__ == "__main__":
     main()
