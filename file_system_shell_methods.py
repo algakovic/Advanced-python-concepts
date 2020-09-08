@@ -5,6 +5,7 @@ import os
 from os import path
 import shutil
 from shutil import make_archive
+from zipfile import ZipFile
 
 def main():
     '''make duplicate of an existing file'''
@@ -22,12 +23,17 @@ def main():
         # Rename the original file
         '''os.rename("textfile.txt", "testfile.txt")'''
 
-    '''Put things into a Zip Archive'''
+    '''Put all contents of directory into a Zip Archive'''
     if path.exists("testfile.txt"):
         src = path.realpath("testfile.txt")
         # use path.split to get directory path
         root_dir, tail = path.split(src)
         shutil.make_archive("archive", "zip", root_dir)
+
+        '''More fine grained control for adding to a zipfile:'''
+        with ZipFile("testzip.zip", "w") as newzip:
+            newzip.write("testfile.txt")
+            newzip.write("textfile.txt.bak")
 
 if __name__ == "__main__":
     main()
