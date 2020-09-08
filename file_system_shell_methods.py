@@ -14,8 +14,12 @@ def main():
         # Make a backup copy by appending "bak" to the name
         dst = src + ".bak"
 
-        # copy over the permissions, modification times and other info
-        shutil.copy(src, dst)
+        # copy the file:
+        # shutil.copy(src, dst)
+        # use shutil.copystat() for permissions, modification times and other info
+
+        # Rename the original file
+        os.rename("textfile.txt", "testfile.txt")
 
 if __name__ == "__main__":
     main()
