@@ -4,15 +4,27 @@
 def main():
     ''' open a file for writing and create it if it doesnt exist:'''
     # python already knows abotu files no import necessary
-    # open textfile.txt with write access and '+' means to create file if does not exist also store as f object:
+    # open textfile.txt with write access 'w' and '+' means to create file if does not exist also store as f object:
 
-    f = open("testfile.txt", "w+")
+    f = open("testfile.txt", "r")
 
     # write some lines of data to the file:
-    for i in range(10):
-        f.write(f"This is line {i} \r\n")
+    '''for i in range(10):
+        f.write(f"This is line {i} \r\n")'''
+
+    # Read the file contents:
+    # use "r" e.g. open(somefile, 'r')
+    # can also use:
+    if f.mode == 'r':
+        contents = f.read()
+        print(contents)
 
 
+
+    # use 'a' parameter to append to end of file instead of writing over the existing info:
+    # E.g: f = open ("testfile.txt", "a")
+
+    # f.close()
 
 if __name__ == "__main__":
     main()
