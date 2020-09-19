@@ -3,7 +3,7 @@
 
 def main():
     ''' open a file for writing and create it if it doesnt exist:'''
-    # python already knows abotu files no import necessary
+    # python already knows about files no import necessary
     # open textfile.txt with write access 'w' and '+' means to create file if does not exist also store as f object:
 
     f = open("testfile.txt", "r")
@@ -19,7 +19,11 @@ def main():
         contents = f.read()
         print(contents)
 
-
+    # or use readlines() to read specific lines:
+    '''if f.mode == 'r':
+        fl = f.readlines()
+        for x in fl:
+            print(x)'''
 
     # use 'a' parameter to append to end of file instead of writing over the existing info:
     # E.g: f = open ("testfile.txt", "a")
